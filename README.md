@@ -1,7 +1,7 @@
 # dual-arm-cable-insertion-ros2
 Vision-assisted dual-arm cable handover and insertion using ROS 2, MoveIt 2 and ArUco-based pose estimation.
 # Vision-Assisted Dual-Arm Cable Handover and Insertion using ROS 2
-
+![Robot CAD](./media/robot-assembly.png.png)
 A vision-assisted dual-arm robotic system for autonomous cable handover and connector insertion using ROS 2, MoveIt 2 and ArUco-based pose estimation.
 
 ## Project Status
@@ -77,7 +77,12 @@ The intended workflow is:
 
 ## Project Documentation
 
-The project presentation and documentation are available in the [`docs`](./docs/) folder.
+- [Project Review Presentation](./docs/Dual_Arm_Cable_Insertion_Project_Review.pdf)
+- [FANUC Project Portfolio](./docs/FANUC_Major_Project_Portfolio_Alen_George.pdf)
+
+## Project Media
+
+Selected CAD models and project images are available in the [`media`](./media/) folder.
 
 ## Future Scope
 
