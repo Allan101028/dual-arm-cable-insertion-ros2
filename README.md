@@ -1,121 +1,88 @@
 # dual-arm-cable-insertion-ros2
 Vision-assisted dual-arm cable handover and insertion using ROS 2, MoveIt 2 and ArUco-based pose estimation.
-# Vision-Assisted Dual-Arm Cable Handover and Insertion using ROS 2 and MoveIt 2
+# Vision-Assisted Dual-Arm Cable Handover and Insertion using ROS 2
+
+A vision-assisted dual-arm robotic system for autonomous cable handover and connector insertion using ROS 2, MoveIt 2 and ArUco-based pose estimation.
+
+## Project Status
+
+**In Development**
 
 ## Overview
 
 This project focuses on developing an autonomous dual-arm robotic system for cable handover and connector insertion.
 
-The system is designed to use vision-based pose estimation to identify the cable and connector, coordinate two robotic arms, plan collision-free trajectories, perform an arm-to-arm cable handover, and execute precise insertion.
+The system is designed to detect the cable and connector using fiducial markers, coordinate two robotic arms, plan collision-free trajectories, perform an arm-to-arm cable handover, and execute precise insertion.
 
-The project uses a low-cost 7-DoF bio-inspired robotic arm platform driven by serial-bus servos.
+The robotic platform is based on a low-cost 7-DoF bio-inspired arm driven by ST3215 serial-bus servos.
 
-## Problem Statement
+## Key Objectives
 
-Cable insertion is challenging because the cable is flexible, its shape and tip orientation can change during manipulation, and the connector requires precise positioning and alignment.
-
-A single robotic arm cannot simultaneously stabilize the cable and perform the insertion task. Therefore, the project uses coordinated dual-arm manipulation with an intermediate handover.
-
-The two arms operate in a shared workspace, requiring collision-free planning between the arms, cable, and surrounding environment.
-
-## Objectives
-
-- Develop an ArUco marker-based vision system for estimating cable and connector poses.
+- Develop an ArUco marker-based vision system for 3D pose estimation.
 - Implement dual-arm coordination using ROS 2 and MoveIt 2.
 - Plan collision-free trajectories in a shared workspace.
-- Perform autonomous cable handover and insertion.
-- Validate the system through cable insertion and peg-in-hole tasks.
-- Evaluate positioning accuracy, handover reliability, success rate, and execution time.
-
-## System Architecture
-
-The planned system consists of:
-
-Vision System
-        ↓
-Pose Estimation
-        ↓
-ROS 2
-        ↓
-MoveIt 2
-        ↓
-Inverse Kinematics & Motion Planning
-        ↓
-Collision Checking
-        ↓
-Dual-Arm Manipulation
-        ↓
-Cable Handover & Insertion
+- Perform autonomous cable handover between two robotic arms.
+- Perform peg-in-hole and cable insertion tasks.
+- Evaluate positioning accuracy, handover reliability and execution performance.
 
 ## Technologies
 
 - ROS 2
 - MoveIt 2
 - Python
-- OpenCV
-- ArUco Markers
-- URDF / XACRO
+- ArUco / Computer Vision
 - RViz
 - Gazebo
+- URDF / Xacro
 - Motion Planning
+- Inverse Kinematics
 - CAD
 - Serial-Bus Servos
 
-## CAD and Robot Design
+## Current Progress
 
-The robotic arm was developed through iterative CAD design.
+### Completed / Developed
 
-The first prototype was evaluated to identify mechanical and integration limitations. A redesigned prototype was developed to improve structural rigidity, workspace, precision, actuator integration and compatibility with ROS 2 and MoveIt 2.
+- Problem identification and system objectives
+- Initial robotic arm design
+- Redesigned robotic arm CAD model
+- Mechanical integration planning
+- URDF/Xacro development
 
-## Current Status
+### In Progress
 
-**Project Status: In Development**
-
-Current work focuses on:
-
-- CAD completion
-- URDF/XACRO robot modelling
-- ROS 2 robot description
-- MoveIt 2 integration
-- Simulation and motion planning
-
-Upcoming work includes:
-
-- Dual-arm motion planning
-- Vision integration
-- Cable handover logic
-- Cable insertion
-- Hardware validation and testing
-
-## My Contribution
-
-I am involved in:
-
-- Robotic arm CAD and mechanical design
-- URDF/XACRO robot modelling
 - ROS 2 integration
-- Preparation for MoveIt 2-based simulation and motion planning
-- Dual-arm robotic manipulation development
+- MoveIt 2 configuration
+- Motion planning
+- Dual-arm coordination
 
-## Project Team
+### Upcoming
 
-Alen George  
-Bharath MS  
-Rone Issac Biju  
-Alen Francis
+- Vision integration
+- Autonomous handover
+- Cable insertion
+- Testing and evaluation
 
-## Project Timeline
+## System Concept
 
-June 2026 – November 2026
+The intended workflow is:
+
+1. Detect the cable and connector using ArUco markers.
+2. Estimate their 3D poses.
+3. Plan the required robot motion using MoveIt 2.
+4. Move the first arm to grasp and stabilize the cable.
+5. Transfer the cable to the second arm.
+6. Plan the insertion trajectory.
+7. Perform the connector insertion while avoiding collisions.
 
 ## Project Documentation
 
-Project presentation and supporting documentation are available in the `docs/` directory.
+The project presentation and documentation are available in the [`docs`](./docs/) folder.
 
 ## Future Scope
 
-- Marker-free cable and connector detection
-- Cable shape estimation and tracking
-- Force/tactile sensing for compliant insertion
-- Learning-based handover and insertion
-- Extension to multi-cable wiring-harness assembly
+- Marker-free cable and connector detection using learned vision models.
+- Cable shape estimation and tracking.
+- Force and tactile sensing for compliant insertion.
+- Learning-based handover and insertion.
+- Extension to multi-cable wiring-harness assembly.
